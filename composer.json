@@ -1,5 +1,5 @@
 {
-    "name": "fsuarezm/ux-ckeditor5",
+    "name": "fsuarezm/ux-ckeditor",
     "type": "symfony-bundle",
     "description": "Textarea input CKEditor for Symfony Forms",
     "keywords": [
