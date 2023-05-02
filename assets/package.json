@@ -1,0 +1,74 @@
+{
+    "name": "@fsm/ux-ckeditor",
+    "description": "Textarea input CKEditor for Symfony Forms",
+    "license": "MIT",
+    "version": "1.0.0",
+    "symfony": {
+        "controllers": {
+            "ckeditor": {
+                "main": "dist/controller.js",
+                "webpackMode": "eager",
+                "fetch": "eager",
+                "enabled": true,
+                "autoimport": {
+                    "@fsm/ux-ckeditor/src/style.css": true
+                }
+            }
+        }
+    },
+    "dependencies": {
+        "@ckeditor/ckeditor5-autoformat": "^35.1.0",
+        "@ckeditor/ckeditor5-basic-styles": "^35.1.0",
+        "@ckeditor/ckeditor5-block-quote": "^35.1.0",
+        "@ckeditor/ckeditor5-cloud-services": "^35.1.0",
+        "@ckeditor/ckeditor5-dev-utils": "^25.4.4",
+        "@ckeditor/ckeditor5-dev-webpack-plugin": "^25.4.4",
+        "@ckeditor/ckeditor5-editor-classic": "^35.1.0",
+        "@ckeditor/ckeditor5-essentials": "^35.1.0",
+        "@ckeditor/ckeditor5-heading": "^35.1.0",
+        "@ckeditor/ckeditor5-horizontal-line": "^35.1.0",
+        "@ckeditor/ckeditor5-html-embed": "^35.1.0",
+        "@ckeditor/ckeditor5-html-support": "^35.1.0",
+        "@ckeditor/ckeditor5-image": "^35.1.0",
+        "@ckeditor/ckeditor5-indent": "^35.1.0",
+        "@ckeditor/ckeditor5-language": "^35.1.0",
+        "@ckeditor/ckeditor5-link": "^35.1.0",
+        "@ckeditor/ckeditor5-list": "^35.1.0",
+        "@ckeditor/ckeditor5-media-embed": "^35.1.0",
+        "@ckeditor/ckeditor5-paste-from-office": "^35.1.0",
+        "@ckeditor/ckeditor5-source-editing": "^35.1.0",
+        "@ckeditor/ckeditor5-table": "^35.1.0",
+        "@ckeditor/ckeditor5-dev-translations": "^35.0.6",
+        "@ckeditor/ckeditor5-typing": "^35.1.0",
+        "@ckeditor/ckeditor5-widget": "^35.1.0",
+        "raw-loader": "^4.0.2",
+        "style-loader": "^3.3.0",
+        "terser-webpack-plugin": "^5.2.4"
+    },
+    "peerDependencies": {
+        "@hotwired/stimulus": "^3.0.0"
+    },
+    "devDependencies": {
+        "@hotwired/stimulus": "^3.0.0",
+        "@babel/cli": "^7.12.1",
+        "@babel/core": "^7.14.2",
+        "@babel/plugin-proposal-class-properties": "^7.12.1",
+        "@babel/preset-env": "^7.12.7",
+        "@symfony/stimulus-testing": "^1.1.0",
+        "babel-loader": "^8.2.2",
+        "ckeditor5": "^35.1.0",
+        "postcss-loader": "^3.0.0",
+        "raw-loader": "^4.0.1"
+    },
+    "jest": {
+        "testRegex": "test/.*\\.test.js",
+        "setupFilesAfterEnv": [
+            "./test/setup.js"
+        ]
+    },
+    "scripts": {
+        "build": "babel src -d dist",
+        "test": "babel src -d dist && jest",
+        "lint": "eslint src test"
+    }
+}

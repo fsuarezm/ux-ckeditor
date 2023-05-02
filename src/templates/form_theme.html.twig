@@ -1,10 +1,12 @@
 {% block ckeditor_widget -%}
-    {%- set dataController = (attr['data-controller']|default('') ~ ' fsuarezm--ux-ckeditor--ckeditor')|trim -%}
+    {%- set dataController = (attr['data-controller']|default('') ~ ' fsm--ux-ckeditor--ckeditor')|trim -%}
+{#    {%- set dataController = (attr['data-controller']|default('') ~ ' xearts--symfony-ux-ckeditor5--ckeditor5')|trim -%}#}
+
     {%- set attr = attr|merge({
-        'data-controller': '',
+        'data-controller': dataController,
         class: (attr.class|default('') ~ ' ckeditor-textarea')|trim,
-        'data-fsuarezm--ux-ckeditor--ckeditor-language-value': language,
-        'data-fsuarezm--ux-ckeditor--ckeditor-config-value': ckeditor_options,
+        'data-fsm--ux-ckeditor--ckeditor-language-value': language,
+        'data-fsm--ux-ckeditor--ckeditor-config-value': ckeditor_options,
     }) -%}
 
     {{ block('textarea_widget') }}

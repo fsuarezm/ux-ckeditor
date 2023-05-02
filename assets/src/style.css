@@ -1,0 +1,4 @@
+.ck-editor__editable {
+    min-height: 350px !important;
+    max-height: 350px !important;
+}
