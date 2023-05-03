@@ -16,6 +16,7 @@ var _indent = _interopRequireDefault(require("@ckeditor/ckeditor5-indent/src/ind
 var _italic = _interopRequireDefault(require("@ckeditor/ckeditor5-basic-styles/src/italic.js"));
 var _link = _interopRequireDefault(require("@ckeditor/ckeditor5-link/src/link.js"));
 var _list = _interopRequireDefault(require("@ckeditor/ckeditor5-list/src/list.js"));
+var _mention = _interopRequireDefault(require("@ckeditor/ckeditor5-mention/src/mention.js"));
 var _paragraph = _interopRequireDefault(require("@ckeditor/ckeditor5-paragraph/src/paragraph.js"));
 var _pastefromoffice = _interopRequireDefault(require("@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice"));
 var _table = _interopRequireDefault(require("@ckeditor/ckeditor5-table/src/table.js"));
@@ -38,16 +39,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); } /**
                                                                                                                                                                                                                       * @license Copyright (c) 2014-2021, CKSource - Frederico Knabben. All rights reserved.
                                                                                                                                                                                                                       * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
-                                                                                                                                                                                                                      */ // import CloudServices from '@ckeditor/ckeditor5-cloud-services/src/cloudservices.js';
-// import Image from '@ckeditor/ckeditor5-image/src/image.js';
-// import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption.js';
-// import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle.js';
-// import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize.js';
-// import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar.js';
-// import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload.js';
-// import LinkImage from '@ckeditor/ckeditor5-link/src/linkimage.js';
-// import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed.js';
-// import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter.js';
+                                                                                                                                                                                                                      */ // import LinkImage from '@ckeditor/ckeditor5-link/src/linkimage.js';
 var Editor = /*#__PURE__*/function (_ClassicEditor) {
   _inherits(Editor, _ClassicEditor);
   var _super = _createSuper(Editor);
@@ -57,85 +49,11 @@ var Editor = /*#__PURE__*/function (_ClassicEditor) {
   }
   return _createClass(Editor);
 }(_classiceditor["default"]); // Plugins to include in the build.
-Editor.builtinPlugins = [_alignment["default"], _autoformat["default"],
-// UploadAdapter,
-_blockquote["default"], _bold["default"], _essentials["default"], _heading["default"],
-// CloudServices,
-_indent["default"],
-// Image,
-// ImageCaption,
-// ImageStyle,
-// ImageToolbar,
-// ImageResize,
-// ImageUpload,
-_italic["default"], _link["default"],
-// LinkImage,
-_list["default"],
-// MediaEmbed,
-_paragraph["default"], _pastefromoffice["default"], _table["default"], _tabletoolbar["default"], _texttransformation["default"],
-// SimpleUploadAdapter,
-_generalhtmlsupport["default"], _sourceediting["default"]];
+Editor.builtinPlugins = [_alignment["default"], _autoformat["default"], _blockquote["default"], _bold["default"], _essentials["default"], _heading["default"], _indent["default"], _italic["default"], _link["default"], _list["default"], _mention["default"], _paragraph["default"], _pastefromoffice["default"], _table["default"], _tabletoolbar["default"], _texttransformation["default"], _generalhtmlsupport["default"], _sourceediting["default"]];
 Editor.defaultConfig = {
   toolbar: {
-    items: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', '|', 'outdent', 'indent', 'alignment', '|',
-    // 'uploadImage',
-    'blockQuote', 'insertTable',
-    // 'mediaEmbed',
-    'undo', 'redo', '|', 'sourceEditing']
+    items: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', '|', 'outdent', 'indent', 'alignment', '|', 'blockQuote', 'insertTable', 'undo', 'redo', '|', 'sourceEditing']
   },
-  // image: {
-  //     resizeOptions: [
-  //         {
-  //             name: 'resizeImage:original',
-  //             value: null,
-  //             label: 'Original'
-  //         },
-  //         {
-  //             name: 'resizeImage:100',
-  //             value: '100',
-  //             label: '100%'
-  //         },
-  //         {
-  //             name: 'resizeImage:60',
-  //             value: '60',
-  //             label: '60%'
-  //         },
-  //         {
-  //             name: 'resizeImage:50',
-  //             value: '50',
-  //             label: '50%'
-  //         },
-  //         {
-  //             name: 'resizeImage:40',
-  //             value: '40',
-  //             label: '40%'
-  //         },
-  //         {
-  //             name: 'resizeImage:30',
-  //             value: '30',
-  //             label: '30%'
-  //         },
-  //         {
-  //             name: 'resizeImage:20',
-  //             value: '20',
-  //             label: '20%'
-  //         }
-  //     ],
-  //     toolbar: [
-  //         'linkImage',
-  //         '|',
-  //         'imageStyle:inline',
-  //         // A dropdown containing `alignLeft` and `alignRight` options.
-  //         'imageStyle:wrapText',
-  //         // A dropdown containing `alignBlockLeft`, `block` (default) and  `alignBlockRight` options.
-  //         'imageStyle:breakText',
-  //         '|',
-  //         'resizeImage',
-  //         '|',
-  //         'toggleImageCaption',
-  //         'imageTextAlternative'
-  //     ]
-  // },
   table: {
     contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells']
   },
