@@ -22,8 +22,7 @@
         "@ckeditor/ckeditor5-basic-styles": "^37.1.0",
         "@ckeditor/ckeditor5-block-quote": "^37.1.0",
         "@ckeditor/ckeditor5-dev-translations": "^37.0.1",
-        "@ckeditor/ckeditor5-dev-utils": "^25.4.4",
-        "@ckeditor/ckeditor5-dev-webpack-plugin": "^25.4.4",
+        "@ckeditor/ckeditor5-dev-utils": "^37.0.1",
         "@ckeditor/ckeditor5-editor-classic": "^37.1.0",
         "@ckeditor/ckeditor5-essentials": "^37.1.0",
         "@ckeditor/ckeditor5-heading": "^37.1.0",
@@ -40,9 +39,12 @@
         "@ckeditor/ckeditor5-table": "^37.1.0",
         "@ckeditor/ckeditor5-typing": "^37.1.0",
         "@ckeditor/ckeditor5-widget": "^37.1.0",
+        "css-loader": "5",
         "raw-loader": "^4.0.2",
-        "style-loader": "^3.3.0",
-        "terser-webpack-plugin": "^5.2.4"
+        "style-loader": "2",
+        "terser-webpack-plugin": "^5.2.4",
+        "webpack": "5",
+        "webpack-cli": "4"
     },
     "peerDependencies": {
         "@hotwired/stimulus": "^3.0.0"
@@ -54,10 +56,7 @@
         "@babel/preset-env": "^7.12.7",
         "@hotwired/stimulus": "^3.0.0",
         "@symfony/stimulus-testing": "^1.1.0",
-        "babel-loader": "^8.2.2",
-        "ckeditor5": "^37.1.0",
-        "postcss-loader": "^3.0.0",
-        "raw-loader": "^4.0.2"
+        "babel-loader": "^8.2.2"
     },
     "jest": {
         "testRegex": "test/.*\\.test.js",
