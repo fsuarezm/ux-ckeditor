@@ -6,27 +6,18 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _classiceditor = _interopRequireDefault(require("@ckeditor/ckeditor5-editor-classic/src/classiceditor.js"));
+var _alignment = _interopRequireDefault(require("@ckeditor/ckeditor5-alignment/src/alignment.js"));
 var _autoformat = _interopRequireDefault(require("@ckeditor/ckeditor5-autoformat/src/autoformat.js"));
 var _blockquote = _interopRequireDefault(require("@ckeditor/ckeditor5-block-quote/src/blockquote.js"));
 var _bold = _interopRequireDefault(require("@ckeditor/ckeditor5-basic-styles/src/bold.js"));
-var _cloudservices = _interopRequireDefault(require("@ckeditor/ckeditor5-cloud-services/src/cloudservices.js"));
 var _essentials = _interopRequireDefault(require("@ckeditor/ckeditor5-essentials/src/essentials.js"));
 var _heading = _interopRequireDefault(require("@ckeditor/ckeditor5-heading/src/heading.js"));
-var _image = _interopRequireDefault(require("@ckeditor/ckeditor5-image/src/image.js"));
-var _imagecaption = _interopRequireDefault(require("@ckeditor/ckeditor5-image/src/imagecaption.js"));
-var _imagestyle = _interopRequireDefault(require("@ckeditor/ckeditor5-image/src/imagestyle.js"));
-var _imageresize = _interopRequireDefault(require("@ckeditor/ckeditor5-image/src/imageresize.js"));
-var _imagetoolbar = _interopRequireDefault(require("@ckeditor/ckeditor5-image/src/imagetoolbar.js"));
-var _imageupload = _interopRequireDefault(require("@ckeditor/ckeditor5-image/src/imageupload.js"));
 var _indent = _interopRequireDefault(require("@ckeditor/ckeditor5-indent/src/indent.js"));
 var _italic = _interopRequireDefault(require("@ckeditor/ckeditor5-basic-styles/src/italic.js"));
 var _link = _interopRequireDefault(require("@ckeditor/ckeditor5-link/src/link.js"));
-var _linkimage = _interopRequireDefault(require("@ckeditor/ckeditor5-link/src/linkimage.js"));
 var _list = _interopRequireDefault(require("@ckeditor/ckeditor5-list/src/list.js"));
-var _mediaembed = _interopRequireDefault(require("@ckeditor/ckeditor5-media-embed/src/mediaembed.js"));
 var _paragraph = _interopRequireDefault(require("@ckeditor/ckeditor5-paragraph/src/paragraph.js"));
 var _pastefromoffice = _interopRequireDefault(require("@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice"));
-var _simpleuploadadapter = _interopRequireDefault(require("@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter.js"));
 var _table = _interopRequireDefault(require("@ckeditor/ckeditor5-table/src/table.js"));
 var _tabletoolbar = _interopRequireDefault(require("@ckeditor/ckeditor5-table/src/tabletoolbar.js"));
 var _texttransformation = _interopRequireDefault(require("@ckeditor/ckeditor5-typing/src/texttransformation.js"));
@@ -47,7 +38,16 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); } /**
                                                                                                                                                                                                                       * @license Copyright (c) 2014-2021, CKSource - Frederico Knabben. All rights reserved.
                                                                                                                                                                                                                       * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
-                                                                                                                                                                                                                      */
+                                                                                                                                                                                                                      */ // import CloudServices from '@ckeditor/ckeditor5-cloud-services/src/cloudservices.js';
+// import Image from '@ckeditor/ckeditor5-image/src/image.js';
+// import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption.js';
+// import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle.js';
+// import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize.js';
+// import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar.js';
+// import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload.js';
+// import LinkImage from '@ckeditor/ckeditor5-link/src/linkimage.js';
+// import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed.js';
+// import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter.js';
 var Editor = /*#__PURE__*/function (_ClassicEditor) {
   _inherits(Editor, _ClassicEditor);
   var _super = _createSuper(Editor);
@@ -57,49 +57,85 @@ var Editor = /*#__PURE__*/function (_ClassicEditor) {
   }
   return _createClass(Editor);
 }(_classiceditor["default"]); // Plugins to include in the build.
-Editor.builtinPlugins = [_essentials["default"],
+Editor.builtinPlugins = [_alignment["default"], _autoformat["default"],
 // UploadAdapter,
-_autoformat["default"], _bold["default"], _italic["default"], _blockquote["default"], _cloudservices["default"], _heading["default"], _image["default"], _imagecaption["default"], _imagestyle["default"], _imagetoolbar["default"], _imageresize["default"], _imageupload["default"], _indent["default"], _link["default"], _linkimage["default"], _list["default"], _mediaembed["default"], _paragraph["default"], _pastefromoffice["default"], _table["default"], _tabletoolbar["default"], _texttransformation["default"], _simpleuploadadapter["default"], _generalhtmlsupport["default"], _sourceediting["default"]];
+_blockquote["default"], _bold["default"], _essentials["default"], _heading["default"],
+// CloudServices,
+_indent["default"],
+// Image,
+// ImageCaption,
+// ImageStyle,
+// ImageToolbar,
+// ImageResize,
+// ImageUpload,
+_italic["default"], _link["default"],
+// LinkImage,
+_list["default"],
+// MediaEmbed,
+_paragraph["default"], _pastefromoffice["default"], _table["default"], _tabletoolbar["default"], _texttransformation["default"],
+// SimpleUploadAdapter,
+_generalhtmlsupport["default"], _sourceediting["default"]];
 Editor.defaultConfig = {
   toolbar: {
-    items: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', '|', 'outdent', 'indent', '|', 'uploadImage', 'blockQuote', 'insertTable', 'mediaEmbed', 'undo', 'redo', '|', 'sourceEditing']
+    items: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', '|', 'outdent', 'indent', 'alignment', '|',
+    // 'uploadImage',
+    'blockQuote', 'insertTable',
+    // 'mediaEmbed',
+    'undo', 'redo', '|', 'sourceEditing']
   },
-  image: {
-    resizeOptions: [{
-      name: 'resizeImage:original',
-      value: null,
-      label: 'Original'
-    }, {
-      name: 'resizeImage:100',
-      value: '100',
-      label: '100%'
-    }, {
-      name: 'resizeImage:60',
-      value: '60',
-      label: '60%'
-    }, {
-      name: 'resizeImage:50',
-      value: '50',
-      label: '50%'
-    }, {
-      name: 'resizeImage:40',
-      value: '40',
-      label: '40%'
-    }, {
-      name: 'resizeImage:30',
-      value: '30',
-      label: '30%'
-    }, {
-      name: 'resizeImage:20',
-      value: '20',
-      label: '20%'
-    }],
-    toolbar: ['linkImage', '|', 'imageStyle:inline',
-    // A dropdown containing `alignLeft` and `alignRight` options.
-    'imageStyle:wrapText',
-    // A dropdown containing `alignBlockLeft`, `block` (default) and  `alignBlockRight` options.
-    'imageStyle:breakText', '|', 'resizeImage', '|', 'toggleImageCaption', 'imageTextAlternative']
-  },
+  // image: {
+  //     resizeOptions: [
+  //         {
+  //             name: 'resizeImage:original',
+  //             value: null,
+  //             label: 'Original'
+  //         },
+  //         {
+  //             name: 'resizeImage:100',
+  //             value: '100',
+  //             label: '100%'
+  //         },
+  //         {
+  //             name: 'resizeImage:60',
+  //             value: '60',
+  //             label: '60%'
+  //         },
+  //         {
+  //             name: 'resizeImage:50',
+  //             value: '50',
+  //             label: '50%'
+  //         },
+  //         {
+  //             name: 'resizeImage:40',
+  //             value: '40',
+  //             label: '40%'
+  //         },
+  //         {
+  //             name: 'resizeImage:30',
+  //             value: '30',
+  //             label: '30%'
+  //         },
+  //         {
+  //             name: 'resizeImage:20',
+  //             value: '20',
+  //             label: '20%'
+  //         }
+  //     ],
+  //     toolbar: [
+  //         'linkImage',
+  //         '|',
+  //         'imageStyle:inline',
+  //         // A dropdown containing `alignLeft` and `alignRight` options.
+  //         'imageStyle:wrapText',
+  //         // A dropdown containing `alignBlockLeft`, `block` (default) and  `alignBlockRight` options.
+  //         'imageStyle:breakText',
+  //         '|',
+  //         'resizeImage',
+  //         '|',
+  //         'toggleImageCaption',
+  //         'imageTextAlternative'
+  //     ]
+  // },
   table: {
     contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells']
   },
