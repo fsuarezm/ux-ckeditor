@@ -4,8 +4,8 @@
     {%- set attr = attr|merge({
         'data-controller': dataController,
         class: (attr.class|default('') ~ ' ckeditor-textarea')|trim,
-        'data-fsm--ux-ckeditor--ckeditor-language': language,
-        'data-fsm--ux-ckeditor--ckeditor-config': ckeditor_options,
+        'data-fsuarezm--ux-ckeditor--ckeditor-language': language,
+        'data-fsuarezm--ux-ckeditor--ckeditor-config': ckeditor_options,
     }) -%}
 
     {{ block('textarea_widget') }}
