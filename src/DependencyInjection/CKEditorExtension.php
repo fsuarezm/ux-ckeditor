@@ -1,12 +1,25 @@
 <?php
 
-namespace Symfony\UX\FSM\CKEditor\DependencyInjection;
+/*
+ * This file is part of fsuarezm/ux-ckeditor
+ *
+ * (c) Francisco Suárez Mulero
+ * @author: Francisco Suárez Mulero
+ * @email: fsuarezm@gmail.com
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
+declare(strict_types=1);
+
+namespace FSM\Symfony\UX\CKEditor\DependencyInjection;
+
+use FSM\Symfony\UX\CKEditor\Form\CKEditorType;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
-use Symfony\UX\FSM\CKEditor\Form\CKEditorType;
 
 /**
  * @internal

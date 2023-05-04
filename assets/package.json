@@ -42,9 +42,7 @@
         "css-loader": "5",
         "raw-loader": "^4.0.2",
         "style-loader": "2",
-        "terser-webpack-plugin": "^5.2.4",
-        "webpack": "5",
-        "webpack-cli": "4"
+        "terser-webpack-plugin": "^5.2.4"
     },
     "peerDependencies": {
         "@hotwired/stimulus": "^3.0.0"
@@ -56,13 +54,9 @@
         "@babel/preset-env": "^7.12.7",
         "@hotwired/stimulus": "^3.0.0",
         "@symfony/stimulus-testing": "^1.1.0",
-        "babel-loader": "^8.2.2"
-    },
-    "jest": {
-        "testRegex": "test/.*\\.test.js",
-        "setupFilesAfterEnv": [
-            "./test/setup.js"
-        ]
+        "babel-loader": "^8.2.2",
+        "webpack": "5",
+        "webpack-cli": "4"
     },
     "scripts": {
         "build": "babel src -d dist",
