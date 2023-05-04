@@ -10,7 +10,7 @@
                 "fetch": "eager",
                 "enabled": true,
                 "autoimport": {
-                    "@fsm/ux-ckeditor/src/style.css": true
+                    "@fsuarezm/ux-ckeditor/src/style.css": true
                 }
             }
         }

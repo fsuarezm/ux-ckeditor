@@ -32,29 +32,17 @@ return [
 
 ### Enable stimulus controller
 
-Add package to package.json:
-
-```
-  // package.json
-  // ...
-  "devDependencies": {
-    // ...
-    "@fsm/ux-ckeditor": "file:vendor/fsuarezm/ux-ckeditor/assets",
-    // ...
-  }
-```
-
 Add controler to assets/controllers.json
 
 ```
     "controllers": {
         // ...
-        "@fsm/ux-ckeditor": {
+        "@fsuarezm/ux-ckeditor": {
             "ckeditor": {
                 "enabled": true,
                 "fetch": "lazy",
                 "autoimport": {
-                    "@fsm/ux-ckeditor/src/style.css": true
+                    "@fsuarezm/ux-ckeditor/src/style.css": true
                 }
             }
         }
