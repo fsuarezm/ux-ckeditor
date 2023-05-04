@@ -7,7 +7,6 @@
         "controllers": {
             "ckeditor": {
                 "main": "dist/controller.js",
-                "webpackMode": "eager",
                 "fetch": "eager",
                 "enabled": true,
                 "autoimport": {
