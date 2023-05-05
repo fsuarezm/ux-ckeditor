@@ -110,20 +110,16 @@ Encore
 ## Usage
 
 ```php
-namespace App\Form\Type\Documento;
-
-use Symfony\Component\Form\AbstractType;
+// ...
 use FSM\Symfony\UX\CKEditor\Form\CKEditorType;
 
-final class TemplateType extends AbstractType
+class CustomFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            // ...
-            
+            // ...      
             ->add('text', CKEditorType::class)
-            
             // ...
             ;
     }
@@ -132,10 +128,83 @@ final class TemplateType extends AbstractType
 }
 ```
 
-## NOTE
+### Mentions
 
-This repository is based on:
+```php
+// ...
+use FSM\Symfony\UX\CKEditor\Form\CKEditorType;
 
-https://github.com/xearts/symfony-ux-ckeditor5
-https://github.com/symfony/ux-dropzone
+final class CustomFormType extends AbstractType
+{
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder
+            // ...      
+            ->add('text', CKEditorType::class, [
+                'ckeditor_options' => [
+                    'mention' => [
+                        'feeds' => [
+                            [
+                                'marker' => '@',
+                                'feed' => [ '@swarley', '@john', '@marry', ...],
+                            ],
+                        ],
+                        'feeds' => [
+                            [
+                                'marker' => '#',
+                                'feed' => [ '#Train', '#Guitar', '#Table', ...],
+                            ],
+                        ]
+                    ]
+                ],
+            ])
+            // ...
+            ;
+    }
 
+    // ...
+}
+```
+
+#### With custom renderer defined in controller
+
+```php
+// ...
+use FSM\Symfony\UX\CKEditor\Form\CKEditorType;
+
+final class CustomFormType extends AbstractType
+{
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder
+            // ...      
+            ->add('text', CKEditorType::class, [
+                'ckeditor_options' => [
+                    'mention' => [
+                        'feeds' => [
+                            [
+                                'marker' => '@',
+                                'feed' => [ 
+                                    [ 'id' => '@swarley', 'description' => 'Barney Stinson'],
+                                    [ 'id' => '@john', 'description' => 'John Mosby'],
+                                    [ 'id' => '@marry', 'description' => 'Marry Ann Lewis'],
+                                    // ...
+                                ],
+                                'renderer' => true,
+                            ],
+                        ]
+                    ]
+                ],
+            ])
+            // ...
+            ;
+    }
+
+    // ...
+}
+```
+
+
+## Note
+
+This repository is inspired on: https://github.com/xearts/symfony-ux-ckeditor5

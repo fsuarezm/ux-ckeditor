@@ -1,3 +1,19 @@
+.ck .ck-mention {
+    height: 300px;
+    max-height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.ck-button__help {
+    color: #666 !important;
+    padding-left: .5em !important;
+}
+
+.ck-on .ck-button__help {
+    color: rgba(255, 255, 255, 0.78) !important;
+}
+
 .ck-editor__editable {
     min-height: 350px !important;
     max-height: 350px !important;

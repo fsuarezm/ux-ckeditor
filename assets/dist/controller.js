@@ -48,6 +48,44 @@ var _default = /*#__PURE__*/function (_Controller) {
       var config_s = this.data.get('config');
       var config = config_s ? JSON.parse(config_s) : {};
       this.config = Object.assign({}, pre_config, config);
+      this.checkMentionRenderer();
+    }
+  }, {
+    key: "checkMentionRenderer",
+    value: function checkMentionRenderer() {
+      var _this = this;
+      if (this.config.hasOwnProperty('mention')) {
+        var feeds = [];
+        this.config.mention.feeds.forEach(function (feed) {
+          if (feed.renderer) {
+            feed = Object.assign({
+              itemRenderer: _this.itemRenderer
+            }, feed);
+          }
+          feeds.push(feed);
+        });
+        this.config.mention.feeds = feeds;
+      }
+    }
+  }, {
+    key: "itemRenderer",
+    value: function itemRenderer(item) {
+      var buttonElement = document.createElement('button');
+      var itemElement = document.createElement('span');
+      var helpElement = document.createElement('span');
+      buttonElement.type = 'button';
+      buttonElement.classList.add('ck');
+      buttonElement.classList.add('ck-button');
+      buttonElement.classList.add('ck-button_with-text');
+      itemElement.classList.add('ck');
+      itemElement.classList.add('ck-button__label');
+      helpElement.classList.add('ck');
+      helpElement.classList.add('ck-button__help');
+      itemElement.textContent = "".concat(item.description, " ");
+      helpElement.textContent = item.id;
+      itemElement.appendChild(helpElement);
+      buttonElement.appendChild(itemElement);
+      return buttonElement;
     }
   }]);
   return _default;
