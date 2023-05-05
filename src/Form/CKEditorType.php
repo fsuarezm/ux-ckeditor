@@ -35,7 +35,7 @@ class CKEditorType extends AbstractType
     public function buildView(FormView $view, FormInterface $form, array $options): void
     {
         $view->vars['language'] = $options['language'];
-        $view->vars['ckeditor_options'] = \json_encode($options['ckeditor_options'], JSON_FORCE_OBJECT);
+        $view->vars['ckeditor_options'] = \json_encode($options['ckeditor_options']);
     }
 
     public function getParent(): ?string
